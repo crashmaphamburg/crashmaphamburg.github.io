@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+   <title>CrashMapHH: Verkehrsunfälle in Hamburg</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <meta property="twitter:card" content="summary_large_image">
+   <meta property="twitter:image" content="https://appwerft.github.io/fangohr/screen.png">
+
+   <style>
+      body {
+         padding: 0;
+         margin: 0;
+      }
+
+      html,
+      body,
+      #unfallkarte {
+         height: 100%;
+         width: 100vw;
+      }
+   </style>
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin="" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+   <script src="jquery.csv.js"></script>
+   <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+   <link rel="stylesheet" href="switcher.css">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+   <!--- <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"
+      crossorigin=""></script> 
+   -->
+   <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0/leaflet.js" crossorigin=""></script>
+   <script src="leaflet.heat.js"></script>
+   <script src="app.unfaelle.js"></script>
+   <script src="d3.pie.js"></script>
+  
+   <script src="index.js?_"></script>
+</head>
+
+
+
+<body class="drawer drawer--left">
+   <header role="banner">
+      <button type="button" class="drawer-toggle drawer-hamburger">
+         <span class="sr-only"></span>
+         <span class="drawer-hamburger-icon"></span>
+      </button>
+      <nav class="drawer-nav" role="navigation">
+
+         <ul class="drawer-menu scroller">
+            <li><a class="drawer-brand" href="#">Beteiligung</a></li>
+            <div id="beteiligung"></div>
+            <li><a class="drawer-brand" href="#">Kategorie</a></li>
+            <div id="kategorie"></div>
+            <li>Wochentage</li>
+            <div id="wochentage"></div>
+            <li>Monate</li>
+            <div id="monate"></div>
+            <li>Tagesstunden</li>
+            <div id="stunden"></div>
+            <!--
+           
+            <li><a class="drawer-brand" href="#">Unfalltyp</a></li>
+            <div id="utyp1"></div>
+            <li><a class="drawer-brand" href="#">Unfallart</a></li>
+            <div id="uart"></div>
+-->
+            <!--
+          <li><a class="drawer-menu-item" href="#">Unfallart</a></li>
+          <li><a class="drawer-menu-item" href="#">Unfalltype</a></li>
+        
+
+
+            <li><a class="drawer-brand" href="#">Monate</a></li>
+      -->
+            <li class="drawer-brand" href="#">Impressum</li>
+            <dl style="margin:10px">
+               <dt>Ideengeber und Beratung:</dt>
+               <dd>Kai Fangohr
+               <dd>
+               <dt>techn. Beratung:</dt>
+               <dd>Rainer Schleevoigt
+               <dd>
+               <dt>Datenquelle:</dt>
+               <dd>
+               <dd><a href="https://unfallatlas.statistikportal.de/_opendata2019.html">Statistisches Bundeamt
+                     Wiesbaden</a>
+               </dd>
+               <p>
+                  <i>Der Unfallatlas enthält Unfälle mit Personenschaden. Unfälle, bei denen nur Sachschaden entsteht,
+                     werden nicht dargestellt. </i>
+               </p>
+            </dl>
+
+
+         </ul>
+
+      </nav>
+   </header>
+   <main role="main" id="unfallkarte" role="main" style="z-index:0"></main>
+</body>
+
+</html>
